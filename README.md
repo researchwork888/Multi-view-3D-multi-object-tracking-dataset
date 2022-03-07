@@ -27,7 +27,7 @@ Description:
 - Reference: https://motchallenge.net/instructions/
 - GT_CMCX_Cam_X.txt -> Bounding-box ground truths for each camera. 
 - DET_CMCX_CamX.txt -> Bounding-box detections for each camera. 
-- GT_CMCX_WOLD_CENTROID.txt -> 3D centroid + extent ground truths (axis-aligned ellipsoids), i.e., <x_c y_c z_c x_half y_half z_half>, where <x_c y_c z_c> is the centroid and <x_half y_half z_half> is the half-lengths of the ellipsoid.
+- GT_CMCX_WOLD_CENTROID.txt -> 3D centroid + extent (axis-aligned ellipsoids) ground truths, i.e., <x_c y_c z_c x_half y_half z_half>, where <x_c y_c z_c> is the centroid and <x_half y_half z_half> is the half-lengths of the ellipsoid.
 
 
 
