@@ -1,7 +1,7 @@
 # Multi-view-3D-People-Tracking-Dataset
 
-**CMC Dataset**
-The new CMC dataset is a 4-camera 1920x1024 resolution dataset recorded at 4fps in a room with dimensions 7.67m x 3.41m x 2.7m. The CMC dataset has 5 different sequences with varying levels of person density and occlusion
+**CMC Dataset - Multi-view/Multi-camera 3D People Tracking Dataset**
+The new CMC dataset is a 4-camera 1920x1024 resolution dataset recorded at 4fps in a room with dimensions 7.67m x 3.41m x 2.7m. The CMC dataset has 5 different sequences with varying levels of person density and occlusion.
 
 Description:
 
