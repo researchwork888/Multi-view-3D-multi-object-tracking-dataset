@@ -1,6 +1,6 @@
 # Multi-view-3D-People-Tracking-Dataset
 
-CMC Dataset - Multi-view 3D People Tracking Dataset
+CMC Dataset
 
 This 4-camera dataset is published in relation to the following paper: 
 
@@ -16,7 +16,7 @@ Url: https://ieeexplore.ieee.org/document/9242263
 
 Description:
 
-1) CMCX -> Folders containing the respective datasets, i.e.,
+1) CMCX -> Folders containing the links to download datasets, i.e.,
 - CMC1 has a maximum of 3 people and virtually no occlusion. 
 - CMC2 has a maximum of 10 people with some occlusion. 
 - CMC3 has a maximum of 15 people with significant occlusion. 
