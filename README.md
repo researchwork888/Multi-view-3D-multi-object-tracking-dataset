@@ -4,11 +4,11 @@ CMC Dataset - Multi-view 3D People Tracking Dataset
 
 This 4-camera dataset is published in relation to the following paper: 
 
-@article{ong2020bayesian,
-  title={A Bayesian Filter for Multi-view 3D Multi-object Tracking with Occlusion Handling.},
-  author={Ong, J and Vo, BT and Vo, BN and Kim, DY and Nordholm, S},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2020}
+@article{ong2020bayesian,\
+  title={A Bayesian Filter for Multi-view 3D Multi-object Tracking with Occlusion Handling.},\
+  author={Ong, J and Vo, BT and Vo, BN and Kim, DY and Nordholm, S},\
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\
+  year={2020}\
 }
 
 Url: https://ieeexplore.ieee.org/document/9242263
