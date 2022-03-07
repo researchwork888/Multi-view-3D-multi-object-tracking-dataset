@@ -27,7 +27,6 @@ Description:
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\
   year={2020}\
 }
-
 - Url: https://ieeexplore.ieee.org/document/9242263
 
 
