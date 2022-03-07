@@ -16,11 +16,11 @@ Url: https://ieeexplore.ieee.org/document/9242263
 
 Description:
 
-1) CMCX -> Folders containing the respective datasets, i.e.,\
-- CMC1 has a maximum of 3 people and virtually no occlusion. \
-- CMC2 has a maximum of 10 people with some occlusion. \
-- CMC3 has a maximum of 15 people with significant occlusion. \
-- CMC4 involves people jumping and falling with a maximum of 3 people. \
+1) CMCX -> Folders containing the respective datasets, i.e.,
+- CMC1 has a maximum of 3 people and virtually no occlusion. 
+- CMC2 has a maximum of 10 people with some occlusion. 
+- CMC3 has a maximum of 15 people with significant occlusion. 
+- CMC4 involves people jumping and falling with a maximum of 3 people. 
 - CMC5 involves people jumping and falling with a maximum of 7 people. 
 
 2) MOT format annotations
