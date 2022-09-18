@@ -21,11 +21,16 @@ Description:
 3) This 4-camera dataset is published in relation to the following paper: 
 
 - @article{ong2020bayesian,\
-  title={A Bayesian Filter for Multi-view 3D Multi-object Tracking with Occlusion Handling.},\
-  author={Ong, J and Vo, BT and Vo, BN and Kim, DY and Nordholm, S},\
+  author={Ong, Jonah and Vo, Ba-Tuong and Vo, Ba-Ngu and Kim, Du Yong and Nordholm, Sven},\
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},\
-  year={2020}\
-}
+  title={A {B}ayesian Filter for Multi-View 3{D} Multi-Object Tracking With Occlusion Handling},\
+  year={2022},\
+  volume={44},\
+  number={5},\
+  pages={2246-2263},\
+  doi={10.1109/TPAMI.2020.3034435.}\
+  }
+
 - Url: https://ieeexplore.ieee.org/document/9242263
 
 4) Once you download the datasets, place all subfolders in a master folder as shown below.
