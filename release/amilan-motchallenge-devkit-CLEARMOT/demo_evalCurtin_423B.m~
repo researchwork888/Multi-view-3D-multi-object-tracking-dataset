@@ -1,0 +1,95 @@
+clear all
+% benchmarkDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal 5/J_5_2/GT_J_5_2_Cam1.txt/';
+% evaluateDetection('c9-train.txt', 'res/MOT17Det/DPM/data', benchmarkDir);
+addpath(genpath('./amilan-motchallenge-devkit-aa05c63476c9'))
+dataset = 'J_1_1'
+if strcmp(dataset, 'J_1_1')
+
+     resDir = '../CMC1/EST_CMC1_WORLD_CENTROID.txt';
+    gtDataDir =  '../CMC1/GT_CMC1_WORLD_CENTROID_EXTENT.txt';%'GT_J_1_1_WORLD_CENTROID.txt'; %gt 
+
+    benchmark  = ['Curtin423B_',dataset] ;
+elseif strcmp(dataset,'J_FJ_4')
+    % resDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\Results (estimates)\EST_J_5_2_WORLD_CENTROID.txt'; %ESTIMATES   
+    resDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal (Fall and Jump)/J_FJ_4/EST_J_FJ_4_WORLD_CENTROID.txt';
+    % gtDataDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\GT_J_5_2_WORLD_CENTROID.txt'; %gt 
+    gtDataDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal (Fall and Jump)/J_FJ_4/GT_J_FJ_4_WORLD_CENTROID.txt'; %gt 
+
+    benchmark  = ['Curtin423B_',dataset];
+    
+elseif strcmp(dataset,'J_5_2')
+%     % resDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\Results (estimates)\EST_J_5_2_WORLD_CENTROID.txt'; %ESTIMATES   
+%     resDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal 5/J_5_2/EST_J_5_2_WORLD_CENTROID.txt';
+%     % gtDataDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\GT_J_5_2_WORLD_CENTROID.txt'; %gt 
+%     gtDataDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal 5/J_5_2/GT_J_5_2_WORLD_CENTROID.txt'; %gt 
+        resDir = 'EST_J_5_2_WORLD_CENTROID.txt';
+    gtDataDir = 'GT_J_5_2_WORLD_CENTROID.txt'; %gt 
+
+    benchmark  = ['Curtin423B_',dataset];
+    
+elseif strcmp(dataset,'J_6_1')
+%     % resDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\Results (estimates)\EST_J_5_2_WORLD_CENTROID.txt'; %ESTIMATES   
+%     resDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal 6/J_6_1/EST_J_6_1_WORLD_CENTROID.txt';
+% %     resDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal 6/J_6_1/GT_J_6_1_WORLD_CENTROID.txt';
+% 
+%     % gtDataDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\GT_J_5_2_WORLD_CENTROID.txt'; %gt 
+%     gtDataDir = '/Users/jonahong/Documents/MATLAB/Curtin 423B Lab/Journal 6/J_6_1/GT_J_6_1_WORLD_CENTROID.txt'; %gt 
+        resDir = 'EST_J_6_1_WORLD_CENTROID.txt';
+    gtDataDir = 'GT_J_6_1_WORLD_CENTROID.txt'; %gt 
+    benchmark  = ['Curtin423B_',dataset];
+    
+elseif strcmp(dataset,'WILDTRACKS')
+    % resDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\Results (estimates)\EST_J_5_2_WORLD_CENTROID.txt'; %ESTIMATES   
+    resDir = '/Users/jonahong/Documents/WILDTRACKS /Wildtrack_dataset/EST_WILDTRACKS_WORLD.txt';
+%     resDir = '/Users/jonahong/Documents/WILDTRACKS /Wildtrack_dataset/GT_WILDTRACKS_WORLD.txt';
+
+    % gtDataDir = 'C:\Users\17655280\Google Drive\PHD 2018\Codes\Visual Tracking (Visual Task)\VGLMB_Jonah\Multiview_ppl_Tracking_GLMB\Curtin Acoustic Lab 423B\Annotation Backup\J_5_2\GT_J_5_2_WORLD_CENTROID.txt'; %gt 
+    gtDataDir = '/Users/jonahong/Documents/WILDTRACKS /Wildtrack_dataset/GT_WILDTRACKS_WORLD.txt'; %gt 
+
+    benchmark  = ['Curtin423B_',dataset];
+
+end
+
+world = 1;
+threshold = 0.5;%150;1;
+sequenceName = benchmark;
+%%
+gtFilename = gtDataDir; 
+
+gtdata = dlmread(gtFilename);
+gtMat{1} = gtdata;
+
+%%
+resFilename = resDir;
+resdata = dlmread(resFilename);
+resMat{1} = resdata;
+%%
+ frameIdPairs = resMat{1}(:,1:2);
+    [u,I,~] = unique(frameIdPairs, 'rows', 'first');
+    hasDuplicates = size(u,1) < size(frameIdPairs,1);
+    if hasDuplicates
+        ixDupRows = setdiff(1:size(frameIdPairs,1), I);
+        dupFrameIdExample = frameIdPairs(ixDupRows(1),:);
+        rows = find(ismember(frameIdPairs, dupFrameIdExample, 'rows'));
+        
+        errorMessage = sprintf('Invalid submission: Found duplicate ID/Frame pairs in sequence %s.\nInstance:\n', sequenceName);
+        errorMessage = [errorMessage, sprintf('%10.2f', resMat{ind}(rows(1),:)), sprintf('\n')];
+        errorMessage = [errorMessage, sprintf('%10.2f', resMat{ind}(rows(2),:)), sprintf('\n')];
+        assert(~hasDuplicates, errorMessage);
+    end
+   %% 
+%  [metsCLEAR, mInf, additionalInfo] = CLEAR_MOT_HUN(gtMat{1}, resMat{1}, threshold, world);
+  [metsCLEAR, mInf, additionalInfo] = CLEAR_MOT_HUN_gIoU(gtMat{1}, resMat{1}, threshold, world);
+
+    metsID = IDmeasures(gtMat{1}, resMat{1}, threshold, world);
+    mets = [metsID.IDF1, metsID.IDP, metsID.IDR, metsCLEAR];
+    allMets(1).name = sequenceName;
+    allMets(1).m    = mets;
+    allMets(1).IDmeasures = metsID;
+    allMets(1).additionalInfo = additionalInfo;
+    fprintf('%s\n', sequenceName); printMetrics(mets); fprintf('\n');
+    evalFile = fullfile(resDir, sprintf('eval_%s.txt',sequenceName));
+%     dlmwrite(evalFile, mets);
+
+
+%% 

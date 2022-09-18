@@ -1,0 +1,246 @@
+
+dataset = 'CMC1';
+% random camera configuration (1 - activate, 0 - normal 4-camera configuration)
+random_sensor = 0;
+% occlusion model (1 - activate, 0 - deactivate)
+occ_model_on = 1;
+% detector (yolov3 or faster_rcnn_vgg16)
+detector  = "yolov3" ; %"yolov3" or "faster_rcnn_vgg16"
+if performance_eval == '3D_pos'
+    if dataset == "CMC1"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [99.7 99.4 100 3 0 0 4 0 0 0 99.4 91.8]
+                else
+                    [98.9 97.9 99.8 3 0 0 14 1 0 0 97.7 90.5]
+                end
+            else
+                [95.9 92.3 99.8 3 0 0 55 1 1 0 91.3 91.4]
+            end
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [99.5 99.1 100 3 0 0 6 0 0 0 99.1 91.8]
+                else
+                    [95.5 91.4 100 3 0 0 62 0 1 0 90.4 90.5]
+                end
+            else
+                [99.6 99.2 100 3 0 0 5 0 0 0 99.2 91.4]
+            end
+        end
+        
+    elseif dataset == "CMC2"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [91.0 91.1 91.3 10 0 0 16 11 9 2 98.3 81.7]
+                else
+                    [90.1 90.2 90.0 10 0 0 38 29 11 7 96.2 78.9]
+                end
+            else
+                [67.7 79.9 58.9 4 6 0 8 550 34 30 71.5 74.4]
+            end
+        end
+    elseif detector == "faster_rcnn_vgg16"
+        if occ_model_on == 1
+            if random_sensor == 0
+                [90.6 90.5 90.9 10 0 0 50 37 9 5 95.4 83.7]
+            else
+                [86.2 85.5 87.5 10 0 0 120 60 25 13 90.1 79.8]
+            end
+        else
+            [75.3 81.9 69.7 7 3 0 7 316 23 19 83.3 80.4]
+        end
+    elseif dataset == "CMC3"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [77.9 79.7 76.1 13 2 0 63 191 44 33 89.5 76.4]
+                else
+                    [72.1 77.9 67.2 11 4 0 47 437 51 37 81.1 72.3]
+                end
+            else
+                [50.5 69.9 39.5 0 15 0 5 1234 54 51 54.2 67.8]
+            end
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [71.7 74.9 68.8 12 3 0 71 303 44 32 85.2 73.5]
+                else
+                    [67.7 72.1 63.8 10 5 0 92 419 59 44 79.8 68.0]
+                end
+            else
+                [54.3 73.2 43.1 0 15 0 3 1165 53 55 56.8 65.9]
+            end
+        end
+    elseif dataset == "CMC4"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [99.3 99.0 99.5 3 0 0 4 2 0 0 98.5 89.5]
+                else
+                    [95.0 93.5 96.5 3 0 0 17 4 5 1 93.6 87.7]
+                end
+            else
+                [95.9 94.0 97.8 3 0 0 21 5 4 1 92.6 86.4]
+            end
+            
+            
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [98.0 98.5 97.5 3 0 0 3 7 2 1 97.0 87.1]
+                else
+                    [85.1 82.2 88.1 3 0 0 29 0 6 0 91.3 86.6]
+                end
+            else
+                [89.3 85.8 93.1 3 0 0 34 0 12 0 88.6 87.0]
+            end
+            
+        end
+    elseif dataset == "CMC5"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [60.5 63.5 61.3 3 4 0 388 933 55 47 61.1 69.3]
+                else
+                    [59.3 58.1 60.1 3 3 1 418 1172 69 60 56.7 63.9]
+                end
+            else
+                [50.9 51.1 47.6 3 2 2 735 1699 85 69 50.7 59.5]
+            end
+            
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [60.1 62.5 60.1 3 4 0 410 1185 61 49 60.3 64.1]
+                else
+                    [56.2 55.6 59.2 3 3 1 534 1493 63 61 55.7 63.6]
+                end
+            else
+                [49.1 49.7 46.1 3 3 1 781 1337 92 69 49.6 61.6]
+            end
+            
+        end
+    end
+elseif performance_eval == '3D_pos_with_extent'
+    if dataset == "CMC1"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [99.7 99.4 100 3 0 0 4 0 0 0 99.4 67.8]
+                else
+                    [98.9 97.9 99.8 3 0 0 14 1 0 0 97.7 66.7]
+                end
+            else
+                [95.9 92.3 99.8 3 0 0 55 1 1 0 91.3 67.5]
+            end
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [99.5 99.1 100 3 0 0 6 0 0 0 99.1 67.5]
+                else
+                    [95.5 91.4 100 3 0 0 62 0 1 0 90.4 67.2]
+                end
+            else
+                [99.6 99.2 100 3 0 0 5 0 0 0 99.2 66.9]
+            end
+        end
+        
+    elseif dataset == "CMC2"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [87.9 87.5 87.7 10 0 0 19 14 8 2 98.0 62.3]
+                else
+                    [87.3 87.1 87.5 10 0 0 53 44 14 12 94.7 57.0]
+                end
+            else
+                [59.4 69.9 51.7 4 6 0 21 563 30 31 70.4 55.7]
+            end
+        end
+    elseif detector == "faster_rcnn_vgg16"
+        if occ_model_on == 1
+            if random_sensor == 0
+                [86.7 86.5 87.0 10 0 0 68 55 10 8 93.6 60.9]
+            else
+                [81.3 80.2 82.5 10 0 0 127 67 33 15 89.1 55.0]
+            end
+        else
+            [68.6 74.6 63.6 7 3 0 23 332 23 21 81.8 57.1]
+        end
+    elseif dataset == "CMC3"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [70.7 72.3 69.1 14 1 0 94 222 45 37 87.2 52.8]
+                else
+                    [60.8 65.7 56.6 9 6 0 91 481 66 56 77.4 46.6]
+                end
+            else
+                [41.4 57.3 32.4 0 15 0 10 1239 64 60 53.5 46.7]
+            end
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [63.7 66.6 61.1 12 3 0 97 329 63 41 82.7 52.8]
+                else
+                    [57.3 61.0 54.0 10 5 0 133 460 78 60 76.3 47.9]
+                end
+            else
+                [47.5 61.7 43.1 0 15 0 3 1165 53 55 56.8 65.9]
+            end
+        end
+    elseif dataset == "CMC4"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [99.3 99.0 99.5 3 0 0 4 2 0 0 98.5 89.5]
+                else
+                    [95.0 93.5 96.5 3 0 0 17 4 5 1 93.6 87.7]
+                end
+            else
+                [95.9 94.0 97.8 3 0 0 21 5 4 1 92.6 86.4]
+            end
+            
+            
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [98.0 98.5 97.5 3 0 0 3 7 2 1 97.0 87.1]
+                else
+                    [85.1 82.2 88.1 3 0 0 29 0 6 0 91.3 86.6]
+                end
+            else
+                [89.3 85.8 93.1 3 0 0 34 0 12 0 88.6 87.0]
+            end
+            
+        end
+    elseif dataset == "CMC5"
+        if detector == "yolov3"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [60.5 63.5 61.3 3 4 0 388 933 55 47 61.1 69.3]
+                else
+                    [59.3 58.1 60.1 3 3 1 418 1172 69 60 56.7 63.9]
+                end
+            else
+                [50.9 51.1 47.6 3 2 2 735 1699 85 69 50.7 59.5]
+            end
+            
+        elseif detector == "faster_rcnn_vgg16"
+            if occ_model_on == 1
+                if random_sensor == 0
+                    [60.1 62.5 60.1 3 4 0 410 1185 61 49 60.3 64.1]
+                else
+                    [56.2 55.6 59.2 3 3 1 534 1493 63 61 55.7 63.6]
+                end
+            else
+                [49.1 49.7 46.1 3 3 1 781 1337 92 69 49.6 61.6]
+            end
+            
+        end
+    end
+    
+end
