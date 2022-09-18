@@ -28,5 +28,8 @@ Description:
 }
 - Url: https://ieeexplore.ieee.org/document/9242263
 
+4) Once you download the datasets, place all subfolders in a master folder as shown below.
+
+![Alt text](/Users/jonahong/Documents/GitHub/Multi-view-3D-multi-object-tracking-dataset/README.jpg?raw=true "Title") 
 
 
