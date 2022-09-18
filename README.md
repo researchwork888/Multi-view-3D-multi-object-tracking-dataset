@@ -30,4 +30,4 @@ Description:
 
 4) Once you download the datasets, place all subfolders in a master folder as shown below.
 
-![plot](/Users/jonahong/Documents/GitHub/Multi-view-3D-multi-object-tracking-dataset/README.jpg)
+![plot](https://github.com/researchwork888/Multi-view-3D-multi-object-tracking-dataset/blob/main/README.png)
